@@ -1,35 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'app_screens/first_screen.dart';
 
-  //run app method
-  runApp(
 
-    MaterialApp(
-      title: "My Flutter App", // app name
-      home: Scaffold(
-        appBar: AppBar(title: Text("My First Flutter App"),),
+void main() =>  runApp(MyFirstApp());
 
-        //body of the app
-        body: Material( // material design body for the app body
 
-          color: Colors.lightBlue, //color for the app
+class MyFirstApp extends StatelessWidget {
 
-          child: Center( // widget to center text
+  @override
+  Widget build(BuildContext context) {
 
-            child: Text( // child widget to display text
+    return  MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "My Flutter App", // app name
+        home: Scaffold(
+          appBar: AppBar(title: Text("My First Flutter App"),),
 
-              "Hello Flutter", // text that displays
+          //body of the app
+          body: FirstScreen()
+        )
+    );
+  }
 
-              textDirection: TextDirection.ltr, // text direction
-
-              style: TextStyle(color: Colors.white, fontSize: 40.0), // styling
-
-            ),
-          ),
-        ),
-      )
-    )
-  );
 }
